@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>november 17, 2024</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .typewriter-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .typewriter-row {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: #ebebeb;
+      white-space: nowrap;
+      overflow: hidden;
+      text-transform: uppercase;
+      animation: slide 12s linear infinite;
+    }
+    .typewriter-row:nth-child(even) { animation-duration: 15s; animation-delay: -5s; }
+    .typewriter-row:nth-child(3n) { animation-duration: 10s; animation-delay: -2s; }
+    @keyframes slide {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .container { position: relative; z-index: 1; }
+
+    .date-label {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: #888;
+      font-family: 'Courier New', monospace;
+      align-self: flex-start;
+    }
+
+    .folder-photo {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="typewriter-bg" id="typewriter-bg"></div>
+
+  <main class="container">
+    <a href="home.html" class="back-link">← home</a>
+    <span class="date-label">november 17, 2024</span>
+    <img src="folder1.jpg" alt="" class="folder-photo" draggable="false" oncontextmenu="return false;" />
+  </main>
+
+  <script>
+    var bg = document.getElementById('typewriter-bg');
+    var rows = Math.ceil(window.innerHeight / 24);
+    for (var i = 0; i < rows; i++) {
+      var row = document.createElement('div');
+      row.className = 'typewriter-row';
+      row.textContent = 'WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME';
+      bg.appendChild(row);
+    }
+  </script>
+
+</body>
+</html>
